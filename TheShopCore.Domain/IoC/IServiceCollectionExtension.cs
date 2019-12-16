@@ -18,10 +18,8 @@ namespace TheShopCore.Domain.IoC
             services.AddTransient<IUnitOfWork, UnitOfWork>();            
             services.AddSingleton(typeof(IGenericRepository<>), typeof(GenericRepository<>));
            
-            // Change in accordance to your db
-            var connection = @"";
             services.AddDbContext<TheShopCoreContext>
-                (options => options.UseSqlServer(connection));
+                (options => options.UseInMemoryDatabase(databaseName: "TheShopCore"));
             return services;
         }
     }

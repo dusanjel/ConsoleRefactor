@@ -9,6 +9,9 @@ namespace TheShopCore.Domain.Models
     {
         public TheShopCoreContext(DbContextOptions<TheShopCoreContext> options)
             : base(options)
-        { }
+        { 
+        }
+        public virtual DbSet<Article> Articles { get; set; }
+        public virtual DbSet<Supplier> Suppliers { get; set; }
     }
 }

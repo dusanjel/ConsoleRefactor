@@ -17,7 +17,9 @@ namespace TheShopCore.Domain.IoC
             //services.AddTransient<IGetMeRepo, GetMe>();   
             services.AddTransient<IUnitOfWork, UnitOfWork>();            
             services.AddSingleton(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-           
+            services.AddSingleton(typeof(IArticleRepository), typeof(ArticleRepository));
+            services.AddSingleton(typeof(ISupplierRepository), typeof(SupplierRepository));
+
             services.AddDbContext<TheShopCoreContext>
                 (options => options.UseInMemoryDatabase(databaseName: "TheShopCore"));
             return services;

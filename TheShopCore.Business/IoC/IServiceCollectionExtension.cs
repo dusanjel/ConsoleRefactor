@@ -6,6 +6,8 @@ using TheShopCore.Domain.IoC;
 using TheShopCore.Domain.Interfaces;
 using TheShopCore.Domain.Repositories;
 using TheShopCore.Domain.Models;
+using TheShopCore.Business.Interfaces;
+using TheShopCore.Business.Services;
 
 namespace TheShopCore.Business.IoC
 {
@@ -15,10 +17,9 @@ namespace TheShopCore.Business.IoC
         {
             //Register dependencies here
             //services.AddTransient<IGetMeRepo, GetMe>();   
+            services.AddTheShopCoreDomain();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<TheShopCoreContext, TheShopCoreContext>();         
-
-            services.AddTheShopCoreDomain();            
+            services.AddTransient<TheShopCoreContext, TheShopCoreContext>();
             return services;
         }
     }

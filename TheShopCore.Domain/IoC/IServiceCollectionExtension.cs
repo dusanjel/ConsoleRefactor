@@ -20,8 +20,8 @@ namespace TheShopCore.Domain.IoC
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();            
             services.AddSingleton(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddSingleton(typeof(IArticleRepository), typeof(ArticleRepository));
-            services.AddSingleton(typeof(ISupplierRepository), typeof(SupplierRepository));
+            services.AddTransient<IArticleRepository, ArticleRepository>();
+            services.AddTransient<ISupplierRepository, SupplierRepository>();
 
             return services;
         }

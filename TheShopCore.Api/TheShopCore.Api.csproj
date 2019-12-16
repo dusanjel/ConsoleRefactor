@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TheShopCore.Business\TheShopCore.Business.csproj" />
+    <ProjectReference Include="..\TheShopCore.Utils\TheShopCore.Utils.csproj" />
   </ItemGroup>
 
 </Project>

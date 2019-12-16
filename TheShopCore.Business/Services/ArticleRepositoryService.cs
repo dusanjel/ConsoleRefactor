@@ -5,6 +5,8 @@ using TheShopCore.Business.Interfaces;
 using TheShopCore.Business.ServiceModels;
 using TheShopCore.Domain.Interfaces;
 using TheShopCore.Domain.Models;
+using TheShopCore.Utils.Log;
+using TheShopCore.Utils.Support;
 
 namespace TheShopCore.Business.Services
 {
@@ -99,7 +101,7 @@ namespace TheShopCore.Business.Services
                 throw new Exception("Could not order article");
             }
 
-            //logger.Debug("Trying to sell article with id=" + id);
+            Logger.Write(Enums.LogLevel.Debug, "Trying to sell article with id=" + id);
 
             article.IsSold = true;
             article.SoldDate = DateTime.Now;
@@ -108,11 +110,12 @@ namespace TheShopCore.Business.Services
             try
             {
                 unitOfWork.Articles.Add(article);
-                //logger.Info("Article with id=" + id + " is sold.");
+
+                Logger.Write(Enums.LogLevel.Info, "Article with id=" + id + " is sold.");
             }
             catch (ArgumentNullException ex)
             {
-                //logger.Error("Could not save article with id=" + id);
+                Logger.Write(Enums.LogLevel.Error, "Could not save article with id=" + id);
                 throw new Exception("Could not save article with id");
             }
             catch (Exception)

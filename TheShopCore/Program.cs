@@ -12,7 +12,7 @@ namespace TheShopCore
 
         static void Main(string[] args)
         {
-            // Call API Service save test data to in memory DB
+            // Call API Service save test data to in memory DB service can be created to save custom data but this is more obvious for testing purposes.
             client.PostAsync("http://localhost:53329/TheShopCore/SaveArticle", null).GetAwaiter().GetResult();
 
             try

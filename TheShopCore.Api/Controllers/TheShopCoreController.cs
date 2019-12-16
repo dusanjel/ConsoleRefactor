@@ -26,9 +26,16 @@ namespace TheShopCore.Api.Controllers
         }
 
         [HttpGet]
-        public List<ArticleServiceModel> GetById(int Id)
+        public int? GetById(int Id)
         {
-            return ArticleService.GetById(Id);
+            var result = ArticleService.GetById(Id);
+
+            if (result.Count > 0)
+            {
+                return result.SingleOrDefault().Id;
+            }
+            else
+                return null;
         }
 
         [HttpPost]

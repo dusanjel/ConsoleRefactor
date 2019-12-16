@@ -30,7 +30,7 @@ namespace TheShopCore
             try
             {
                 //print article on console
-                var article = client.GetAsync("http://localhost:53329/TheShopCore?Id=1").GetAwaiter().GetResult();
+                var article = client.GetAsync("http://localhost:53329/TheShopCore?Id=1").GetAwaiter().GetResult().Content.ReadAsStringAsync().GetAwaiter().GetResult();
                 Console.WriteLine("Found article with ID: " + article);
             }
             catch (Exception ex)
@@ -41,8 +41,14 @@ namespace TheShopCore
             try
             {
                 //print article on console				
-                var article = client.GetAsync("http://localhost:53329/TheShopCore?Id=12").GetAwaiter().GetResult();
-                Console.WriteLine("Found article with ID: " + article);
+                var article = client.GetAsync("http://localhost:53329/TheShopCore?Id=12").GetAwaiter().GetResult().Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                if (article != "")
+                {
+                    Console.WriteLine("Found article with ID: " + article);
+                }
+                else
+                    Console.WriteLine("Article not found");
+
             }
             catch (Exception ex)
             {

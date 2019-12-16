@@ -26,25 +26,57 @@ namespace TheShopCore.Api.Controllers
         }
 
         [HttpGet]
-        public List<ArticleServiceModel> Get()
+        public List<ArticleServiceModel> GetById(int Id)
         {
-            return ArticleService.GetAll();
+            return ArticleService.GetById(Id);
         }
 
         [HttpPost]
-        public void Post()
+        public void OrderAndSellArticle(int id, int maxExpectedPrice, int buyerId)
+        {
+            ArticleService.OrderAndSellArticle(id, maxExpectedPrice, buyerId);
+        }
+
+        [Route("[action]")]
+        [HttpPost]
+        public void SaveArticle()
         {
             ArticleService.SaveArticle(
                 new ArticleServiceModel()
                 { 
-                    ArticlePrice = 1800,
+                    ArticlePrice = 458,
                     BuyerUserId = 1,
                     Id = 1,
                     IsSold = false,
-                    Name_of_article = "Nice article",
+                    Name_of_article = "Article from supplier1",
                     SoldDate = DateTime.Now
                 }
             );
+
+            ArticleService.SaveArticle(
+               new ArticleServiceModel()
+               {
+                   ArticlePrice = 459,
+                   BuyerUserId = 1,
+                   Id = 2,
+                   IsSold = false,
+                   Name_of_article = "Article from supplier2",
+                   SoldDate = DateTime.Now
+               }
+           );
+
+
+           ArticleService.SaveArticle(
+               new ArticleServiceModel()
+               {
+                   ArticlePrice = 460,
+                   BuyerUserId = 1,
+                   Id = 3,
+                   IsSold = false,
+                   Name_of_article = "Article from supplier3",
+                   SoldDate = DateTime.Now
+               }
+           );
         }
     }
 }

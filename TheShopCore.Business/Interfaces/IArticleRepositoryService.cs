@@ -9,5 +9,7 @@ namespace TheShopCore.Business.Interfaces
     {
         void SaveArticle(ArticleServiceModel model);
         List<ArticleServiceModel> GetAll();
+        List<ArticleServiceModel> GetById(int Id);
+        void OrderAndSellArticle(int id, int maxExpectedPrice, int buyerId);
     }
 }

@@ -32,5 +32,27 @@ namespace TheShopCore.Business.Services
             unitOfWork.Articles.Add(article);
             unitOfWork.SaveChanges();
         }
+
+        public List<ArticleServiceModel> GetAll()
+        {
+            var articles = unitOfWork.Articles.GetAll();
+            List<ArticleServiceModel> result = new List<ArticleServiceModel>();
+
+            foreach (Article item in articles)
+            {
+                ArticleServiceModel articleSm = new ArticleServiceModel()
+                {
+                    ArticlePrice = item.ArticlePrice,
+                    BuyerUserId = item.BuyerUserId,
+                    Id = item.Id,
+                    IsSold = item.IsSold,
+                    Name_of_article = item.Name_of_article,
+                    SoldDate = item.SoldDate
+                };
+
+                result.Add(articleSm);
+            }
+            return result;
+        }
     }
 }

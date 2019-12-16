@@ -8,5 +8,6 @@ namespace TheShopCore.Business.Interfaces
     public interface IArticleRepositoryService
     {
         void SaveArticle(ArticleServiceModel model);
+        List<ArticleServiceModel> GetAll();
     }
 }

@@ -19,7 +19,7 @@ namespace TheShopCore.Api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public string Get()
         {
             return null;
         }

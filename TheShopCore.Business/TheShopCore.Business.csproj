@@ -11,4 +11,8 @@
     <Folder Include="ServiceModels\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TheShopCore.Domain\TheShopCore.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

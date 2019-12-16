@@ -12,8 +12,13 @@ namespace TheShopCore.Domain.Repositories
         
         public UnitOfWork(TheShopCoreContext context)
         {
-            _context = context;  
+            _context = context;
+            Articles = new ArticleRepository(_context);
+            Suppliers = new SupplierRepository(_context);
         }
+
+        public IArticleRepository Articles { get; private set; }
+        public ISupplierRepository Suppliers { get; private set; }
 
         public int SaveChanges()
         {

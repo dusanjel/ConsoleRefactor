@@ -14,14 +14,15 @@ namespace TheShopCore.Domain.IoC
         public static IServiceCollection AddTheShopCoreDomain(this IServiceCollection services)
         {
             //Register dependencies here
-            //services.AddTransient<IGetMeRepo, GetMe>();   
+            //services.AddTransient<IGetMeRepo, GetMeRepo>();   
+            services.AddDbContext<TheShopCoreContext>
+                (options => options.UseInMemoryDatabase(databaseName: "TheShopCore"));
+
             services.AddTransient<IUnitOfWork, UnitOfWork>();            
             services.AddSingleton(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddSingleton(typeof(IArticleRepository), typeof(ArticleRepository));
             services.AddSingleton(typeof(ISupplierRepository), typeof(SupplierRepository));
 
-            services.AddDbContext<TheShopCoreContext>
-                (options => options.UseInMemoryDatabase(databaseName: "TheShopCore"));
             return services;
         }
     }

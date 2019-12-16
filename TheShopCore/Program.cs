@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using TheShopCore.IoC;
+﻿using System;
 
 namespace TheShopCore
 {
@@ -8,11 +6,7 @@ namespace TheShopCore
     {
         static void Main(string[] args)
         {
-            var serviceProvider = InversionOfControl.GetServiceProvider();
-
-            // Get Service and call method
-            //var service = serviceProvider.GetService<TheShopCoreService>();
-            //service.MyServiceMethod();
+            // Call API Service
         }
     }
 }

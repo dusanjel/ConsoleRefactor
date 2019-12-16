@@ -5,15 +5,17 @@ VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheShop", "TheShop\TheShop.csproj", "{72C6A701-A607-4030-8A52-D004440C2AA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheShopCore", "TheShopCore\TheShopCore.csproj", "{CC0D2AC2-1DE4-421F-A4F2-2F2F1F913A42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheShopCore", "TheShopCore\TheShopCore.csproj", "{CC0D2AC2-1DE4-421F-A4F2-2F2F1F913A42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheShopCore.Business", "TheShopCore.Business\TheShopCore.Business.csproj", "{B6E05163-71A4-4A53-966B-F3D74EFD2375}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheShopCore.Business", "TheShopCore.Business\TheShopCore.Business.csproj", "{B6E05163-71A4-4A53-966B-F3D74EFD2375}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheShopCore.Domain", "TheShopCore.Domain\TheShopCore.Domain.csproj", "{1DC82518-8E9D-45A7-8659-886F888898D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheShopCore.Domain", "TheShopCore.Domain\TheShopCore.Domain.csproj", "{1DC82518-8E9D-45A7-8659-886F888898D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheShopCore.Utils", "TheShopCore.Utils\TheShopCore.Utils.csproj", "{B9F1603B-CB94-4E65-9359-980C6430E746}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheShopCore.Utils", "TheShopCore.Utils\TheShopCore.Utils.csproj", "{B9F1603B-CB94-4E65-9359-980C6430E746}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheShopCore.Tests", "TheShopCore.Tests\TheShopCore.Tests.csproj", "{148B11DA-301F-4A1A-9AE2-E573C25892B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheShopCore.Tests", "TheShopCore.Tests\TheShopCore.Tests.csproj", "{148B11DA-301F-4A1A-9AE2-E573C25892B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheShopCore.Api", "TheShopCore.Api\TheShopCore.Api.csproj", "{C5FD081B-C935-4792-9357-DB988ECD2F83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{148B11DA-301F-4A1A-9AE2-E573C25892B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{148B11DA-301F-4A1A-9AE2-E573C25892B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{148B11DA-301F-4A1A-9AE2-E573C25892B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5FD081B-C935-4792-9357-DB988ECD2F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5FD081B-C935-4792-9357-DB988ECD2F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5FD081B-C935-4792-9357-DB988ECD2F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5FD081B-C935-4792-9357-DB988ECD2F83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
